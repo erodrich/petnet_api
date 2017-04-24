@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 20170422074628) do
 
-  create_table "pets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "pets", force: :cascade do |t|
     t.string   "name"
     t.string   "animal"
     t.string   "breed"
@@ -21,17 +24,17 @@ ActiveRecord::Schema.define(version: 20170422074628) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "posts", force: :cascade do |t|
     t.string   "title"
-    t.text     "content",    limit: 65535
+    t.text     "content"
     t.boolean  "active"
     t.integer  "pet_id"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["pet_id"], name: "index_posts_on_pet_id", using: :btree
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
     t.string   "password_digest"
