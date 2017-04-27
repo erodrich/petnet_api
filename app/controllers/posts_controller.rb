@@ -18,7 +18,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.pet_id = @pet.id
     @post.save
-    json_response(@pet, :created)
+    json_response(@post, :created)
   end
 
   # PUT /todos/:todo_id/items/:id
