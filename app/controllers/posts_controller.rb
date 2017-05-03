@@ -2,12 +2,12 @@ class PostsController < ApplicationController
   before_action :set_pet,   only: [:index, :show, :create, :update, :destroy]
   before_action :set_pet_post, only: [:show, :update, :destroy]
 
-  # GET /todos/:todo_id/items
+  # GET /pets/:pet_id/posts
   def index
     json_response(@pet.post)
   end
 
-  # GET /todos/:todo_id/items/:id
+  # GET /pets/:pet_id/posts/:id
   def show
     json_response(@post)
   end
