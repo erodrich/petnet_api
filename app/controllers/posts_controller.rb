@@ -29,7 +29,7 @@ class PostsController < ApplicationController
     head :no_content
   end
 
-  # DELETE /todos/:todo_id/items/:id
+  # DELETE /pets/:pet_id/posts/:id
   def destroy
     @post.destroy
     head :no_content
