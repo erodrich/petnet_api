@@ -69967,3 +69967,68 @@ Processing by PetsController#destroy as */*
 Completed 204 No Content in 40ms (ActiveRecord: 3.2ms)
 
 
+Started POST "/signup?name=Jorge&email=jorge@gmail.com&password=[FILTERED]&password_confirm=[FILTERED]" for ::1 at 2017-05-02 19:21:46 -0500
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Jorge", "email"=>"jorge@gmail.com", "password"=>"[FILTERED]", "password_confirm"=>"[FILTERED]"}
+Unpermitted parameter: password_confirm
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jorge"], ["email", "jorge@gmail.com"], ["password_digest", "$2a$10$PYcD5ssMKE6IfPQBPwLyfemQ5HEEopsjDHaWRoGRP8PlJFmMRU9ri"], ["created_at", 2017-05-03 00:21:46 UTC], ["updated_at", 2017-05-03 00:21:46 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jorge@gmail.com"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jorge@gmail.com"], ["LIMIT", 1]]
+Completed 201 Created in 213ms (Views: 0.4ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/signup?name=Jorge&email=jorge@gmail.com&password=[FILTERED]&password_confirm=[FILTERED]" for ::1 at 2017-05-02 19:22:21 -0500
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"Jorge", "email"=>"jorge@gmail.com", "password"=>"[FILTERED]", "password_confirm"=>"[FILTERED]"}
+Unpermitted parameter: password_confirm
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Jorge"], ["email", "jorge@gmail.com"], ["password_digest", "$2a$10$izpGn66eb2iJug.2s1XMJOW1Ui8zTp9f.Cr808ioWBny/Yds5DxG."], ["created_at", 2017-05-03 00:22:21 UTC], ["updated_at", 2017-05-03 00:22:21 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jorge@gmail.com"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jorge@gmail.com"], ["LIMIT", 1]]
+Completed 201 Created in 218ms (Views: 0.6ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/auth/login?email=jorge@gmail.com&password=[FILTERED]" for ::1 at 2017-05-02 19:23:04 -0500
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"email"=>"jorge@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jorge@gmail.com"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jorge@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 136ms (Views: 0.1ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/auth/login?email=jorge@gmail.com&password=[FILTERED]" for ::1 at 2017-05-02 19:28:44 -0500
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"email"=>"jorge@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jorge@gmail.com"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jorge@gmail.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 187ms (ActiveRecord: 3.6ms)
+
+
+  
+NameError (undefined local variable or method `email' for #<AuthenticationController:0x007ff8d1245988>):
+  
+app/controllers/authentication_controller.rb:7:in `authenticate'
+Started POST "/auth/login?email=jorge@gmail.com&password=[FILTERED]" for ::1 at 2017-05-02 19:29:25 -0500
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"email"=>"jorge@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jorge@gmail.com"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jorge@gmail.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 174ms (ActiveRecord: 0.2ms)
+
+
+  
+NameError (undefined local variable or method `auth_parms' for #<AuthenticationController:0x007ff8d3a7bc90>):
+  
+app/controllers/authentication_controller.rb:7:in `authenticate'
+Started POST "/auth/login?email=jorge@gmail.com&password=[FILTERED]" for ::1 at 2017-05-02 19:29:34 -0500
+Processing by AuthenticationController#authenticate as */*
+  Parameters: {"email"=>"jorge@gmail.com", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jorge@gmail.com"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jorge@gmail.com"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jorge@gmail.com"], ["LIMIT", 1]]
+Completed 200 OK in 144ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
