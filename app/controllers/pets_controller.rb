@@ -26,7 +26,9 @@ class PetsController < ApplicationController
 
   # DELETE /pets/:id
   def destroy
-    @pet.post.destroy
+    if @pet.post 
+      @pet.post.destroy
+    end
     @pet.destroy
     head :no_content
   end

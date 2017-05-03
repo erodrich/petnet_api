@@ -46,7 +46,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.permit(:title, :content, :active)
+    params.permit(:title, :content, :active, :contact_name, :contact_phone)
   end
 
   def set_pet

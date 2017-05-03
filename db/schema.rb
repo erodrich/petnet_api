@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170422074628) do
+ActiveRecord::Schema.define(version: 20170503003330) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,8 +29,10 @@ ActiveRecord::Schema.define(version: 20170422074628) do
     t.text     "content"
     t.boolean  "active"
     t.integer  "pet_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "contact_name"
+    t.string   "contact_phone"
     t.index ["pet_id"], name: "index_posts_on_pet_id", using: :btree
   end
 
