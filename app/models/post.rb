@@ -6,5 +6,5 @@ class Post < ApplicationRecord
   scope :animal, -> (animal) { where("pets.animal = ?", animal) }
   #scope :animal, joins(:post => :pet).where("pets.animal = ?", animal)
 
-  
+  #some text  
 end
