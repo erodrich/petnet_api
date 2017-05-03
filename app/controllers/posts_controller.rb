@@ -15,10 +15,12 @@ class PostsController < ApplicationController
   # POST /todos/:todo_id/items
   def create
     #@pet.post.create!(post_params)
-    @post = Post.new(post_params)
-    @post.pet_id = @pet.id
-    @post.save
-    json_response(@post, :created)
+    if @pet.post == nil 
+      @post = Post.new(post_params)
+      @post.pet_id = @pet.id
+      @post.save
+      json_response(@post, :created)
+    end
   end
 
   # PUT /todos/:todo_id/items/:id
